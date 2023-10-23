@@ -1,0 +1,63 @@
+@charset "utf-8";
+@function toRem($px) {
+  @return ($px/100) + rem;
+}
+
+@mixin translate3d($x:0,$y:0,$z:0) {
+  -webkit-transform: translate3d($x, $y, $z);
+  -o-transform: translate3d($x, $y, $z);
+  -moz-transform: translate3d($x, $y, $z);
+  transform: translate3d($x, $y, $z);
+}
+
+@mixin scale($x:1) {
+  -webkit-transform: scale($x);
+  -o-transform: scale($x);
+  -moz-transform: scale($x);
+  transform: scale($x);
+}
+
+@mixin rotate($x:180) {
+  -webkit-transform: rotate($x+deg);
+  -o-transform: rotate($x+deg);
+  -moz-transform: rotate($x+deg);
+  transform: rotate($x+deg);
+}
+
+@mixin skew($x:0,$y:0) {
+  -webkit-transform: skew($x+deg, $y+deg);
+  -o-transform: skew($x+deg, $y+deg);
+  -moz-transform: skew($x+deg, $y+deg);
+  transform: skew($x+deg, $y+deg);
+}
+
+@mixin rotateAskew($r:0,$x:0,$y:0,$ipt:null) {
+  -webkit-transform: rotate($r+deg) skew($x+deg, $y+deg) $ipt;
+  -o-transform: rotate($r+deg) skew($x+deg, $y+deg) $ipt;
+  -moz-transform: rotate($r+deg) skew($x+deg, $y+deg) $ipt;
+  transform: rotate($r+deg) skew($x+deg, $y+deg) $ipt;
+}
+
+@mixin rotateAskewTranslate3d($r:0,$x:0,$y:0,$a:0,$b:0,$c:0,$ipt:null) {
+  -webkit-transform: rotate($r+deg) skew($x+deg, $y+deg) translate3d($a, $b, $c) $ipt;
+  -o-transform: rotate($r+deg) skew($x+deg, $y+deg) translate3d($a, $b, $c) $ipt;
+  -moz-transform: rotate($r+deg) skew($x+deg, $y+deg) translate3d($a, $b, $c) $ipt;
+  transform: rotate($r+deg) skew($x+deg, $y+deg) translate3d($a, $b, $c) $ipt;
+}
+
+@mixin box-shadow($a:.2rem,$b:.2rem,$c:.2rem,$d:rgba(0,0,0,.2)) {
+  -webkit-box-shadow: $a $b $c $d;
+  -moz-box-shadow: $a $b $c $d;
+  box-shadow: $a $b $c $d;
+}
+
+//ease-in-out
+@mixin transition($a:all,$b:.2s,$c:cubic-bezier(.06,.2,.17,1.29),$d:0s) {
+  -webkit-transition: $a $b $c $d;
+  -moz-transition: $a $b $c $d;
+  -ms-transition: $a $b $c $d;
+  -o-transition: $a $b $c $d;
+  transition: $a $b $c $d;
+}
+
+$default-text-shadow: 0 0 toRem(16) rgba(255, 255, 255, .5);
