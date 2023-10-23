@@ -60,18 +60,18 @@ export default {
 }
 
 ::-webkit-scrollbar-thumb {
-  width: 4px;
+  width: 6px;
   max-height: 400px;
   background: #e3e3e3;
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
   background: #ffffff;
   border-radius: 4px;
   border: 1px solid #f5f5f5;
-  height: 6px;
+  height: 8px;
 }
 
 ::-webkit-input-placeholder {
